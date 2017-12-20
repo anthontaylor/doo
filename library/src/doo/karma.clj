@@ -70,6 +70,8 @@
      "basePath" (System/getProperty "user.dir")
      "plugins" (into ["karma-cljs-test"] (mapv js-env->plugin js-envs))
      "browsers" (mapv js-env->browser js-envs)
+     "customLaunchers" {"HeadlessChrome" {"base" "ChromeHeadless"
+                                          "flags" ["--no-sandbox" "--enable-logging"]}}
      ;; All this assumes that the output-dir is relative to the user.dir
      ;; base path
      ;; WARNING: the order of the files is important, don't change it.
